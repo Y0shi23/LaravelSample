@@ -1,0 +1,8 @@
+/* --- 外枠の定義 ---------------------------------------------*/
+.boxContainer {
+    background-color: #99cc00;
+    overflow: hidden;
+}
+.box{
+    float: left;
+  }
