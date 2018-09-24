@@ -15,12 +15,22 @@ class Post extends Model
 
     public function getData()
     {
-      // $tableで定義したテーブル名の全件データを取得
-      // select * from テーブル名と同じ
+      // 以下のクエリを実行
+      /**
+       * select 
+       *    monster.name,
+       *    type.typename
+       * from monster_type
+       * left join monster
+       * on monster_type.monster_id = monster.id
+       * left join type
+       * on tyoe.id = monster_type.tyoe_id;
+       */
       $data = DB::table($this->table)
           ->select('monster.name', 'type.type_name')
           ->leftJoin('monster', 'monster_type.monster_id', '=', 'monster.id')
           ->leftJoin('type', 'type.id', '=', 'monster_type.type_id')->get();
+
 
       // 通常のSQLクエリも書ける。
       // $data = DB::select('select * from users where id = ?', [1]);

@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -148,6 +148,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         // 2018/09/13 追加
         Orangehill\Iseed\IseedServiceProvider::class,
+        // 2018/09/21 追加
+        App\Providers\ValidatorServiceProvider::class,
+
 
         /*
          * Package Service Providers...
